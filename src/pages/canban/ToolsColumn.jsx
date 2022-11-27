@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { ToolsItem } from '../components/ToolsItem';
-import { ReactComponent as FilesIcon } from "../assets/icons/filesIcon.svg";
-import { ReactComponent as NotesIcon } from "../assets/icons/notesIcon.svg";
-import { ReactComponent as SheduleIcon } from "../assets/icons/sheduleIcon.svg";
-import { ReactComponent as TasksIcon } from "../assets/icons/tasksIcon.svg";
-import { ReactComponent as RoadmapIcon } from "../assets/icons/roadmap.svg";
+import { ToolsItem } from '../../components/ToolsItem';
+import { ReactComponent as FilesIcon } from "../../assets/icons/filesIcon.svg";
+import { ReactComponent as NotesIcon } from "../../assets/icons/notesIcon.svg";
+import { ReactComponent as SheduleIcon } from "../../assets/icons/sheduleIcon.svg";
+import { ReactComponent as TasksIcon } from "../../assets/icons/tasksIcon.svg";
+import { ReactComponent as RoadmapIcon } from "../../assets/icons/roadmap.svg";
 
 const Container = styled.div`
   max-width: 154px;

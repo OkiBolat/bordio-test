@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from '../components/Button';
-import { InputSearchHeader } from '../components/InputSearchHeader';
-import { ReactComponent as BellIcon } from "../assets/icons/bell.svg";
-import image from "../assets/icons/test.png"
-import { DropDownSelect } from '../components/DropDownSelect';
+import { Button } from '../../components/Button';
+import { InputSearchHeader } from '../../components/InputSearchHeader';
+import { ReactComponent as BellIcon } from "../../assets/icons/bell.svg";
+import image from "../../assets/icons/test.png"
+import { DropDownSelect } from '../../components/DropDownSelect';
 
 const Container = styled.div`
   height: 80px;

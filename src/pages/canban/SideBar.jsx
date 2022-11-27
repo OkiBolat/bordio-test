@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { ReactComponent as Logo } from "../assets/icons/bordio-logo.svg";
-import image from "../assets/icons/test.png"
-import { InputSideBar } from '../components/InputSideBar';
-import { ReactComponent as Arrow } from "../assets/icons/arrow.svg";
+import { ReactComponent as Logo } from "../../assets/icons/bordio-logo.svg";
+import image from "../../assets/icons/test.png"
+import { InputSideBar } from '../../components/InputSideBar';
+import { ReactComponent as Arrow } from "../../assets/icons/arrow.svg";
 
 const Container = styled.div`
   max-width: 11.41%;

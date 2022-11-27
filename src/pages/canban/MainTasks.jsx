@@ -3,9 +3,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DragDropContext } from 'react-beautiful-dnd';
 import styled from 'styled-components';
-import { getCardsThunk, moveCardThunk } from '../redux/canban/actionCreators';
-import { rowsListSelector } from '../redux/canban/selectors';
-import { TasksColumn } from '../components/TasksColumn';
+import { getCardsThunk, moveCardThunk } from '../../redux/canban/actionCreators';
+import { rowsListSelector } from '../../redux/canban/selectors';
+import { TasksColumn } from '../../components/TasksColumn';
 
 const Container = styled.div`
   min-width: 100%;
