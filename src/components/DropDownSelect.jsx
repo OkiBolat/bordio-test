@@ -1,7 +1,20 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as Arrow } from "../assets/icons/arrow.svg";
+function useOutsideClick(ref, e) {
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        e()
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref])
+}
 
 const DropDownStyled = styled.button`
 position: relative;
@@ -59,18 +72,29 @@ order: 2;
 align-self: stretch;
 flex-grow: 0;
 `
+const data = [
+  { label: "Board view", id: 1 },
+  { label: "Table view", id: 2 },
+  { label: "Kanban", id: 3 },
+]
 export const DropDownSelect = ({ handler, children }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const [selectedvalue, setSelectedValue] = useState(data[0])
+
+  const onCloseSelect = () => {
+    setIsOpen(false);
+  };
+
+  const wrapperRef = useRef(null);
+  useOutsideClick(wrapperRef, onCloseSelect);
 
   return (
-    <DropDownStyled onClick={() => setIsOpen(!isOpen)}>
-      {children}
+    <DropDownStyled ref={wrapperRef} onClick={() => setIsOpen(!isOpen)}>
+      {selectedvalue.label}
       <ArrowStyled fill="black" />
       {isOpen &&
         <List>
-          <ListItem>Board view</ListItem>
-          <ListItem>Table view</ListItem>
-          <ListItem>Kanban</ListItem>
+          {data.map(s => <ListItem onClick={() => setSelectedValue(s)} key={s.value}>{s.label}</ListItem> )}
         </List>}
     </DropDownStyled>
   )

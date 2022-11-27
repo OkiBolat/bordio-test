@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import styled, { css } from "styled-components";
-import { ReactComponent as Arrow } from "../assets/icons/arrow.svg";
 import plus from "../assets/icons/plus.png"
 export const Button = ({ handler, children, type = "default" }) => {
 
@@ -31,23 +30,12 @@ export const Button = ({ handler, children, type = "default" }) => {
     color: white;
   `}
 `;
-  const ArrowStyled = styled(Arrow)`
-  path: {
-    fill: black
-  }
-`
-  const isAdd = type === 'add'
   return (
     <Button onClick={handler}>
-      {!isAdd ? <>
-        {children}
-        <ArrowStyled fill="black"/>
-      </> :
         <>
         <img src={plus} />
         {children}
         </>
-      }
     </Button>
   )
 }
