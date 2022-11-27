@@ -20,6 +20,51 @@ const Container = styled.div`
   }
 }
 `
+
+const AddStatusWrp = styled.div`
+display: flex;
+flex-direction: column;
+flex: 0 0 auto;
+min-width: 400px;
+gap:0;
+`
+const AddStatus = styled.div`
+cursor: pointer;
+min-height: 58px;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 2px 25px;
+color: #8C939F;
+gap: 10px;
+&:hover { 
+  color: #black;
+}
+`;
+
+const Text = styled.div`
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+flex: none;
+order: 0;
+flex-grow: 0;
+`;
+
+const AddStatusHeader = styled.div` 
+box-sizing: content-box;
+margin-left: -1px;
+border-bottom: 1px solid #F3F3F3;
+border-left: 1px solid #F3F3F3;
+height: 58px;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+outline: 
+`;
+
 export const MainTasks = () => {
   const dispatch = useDispatch();
   const rows = useSelector(rowsListSelector);
@@ -37,6 +82,13 @@ export const MainTasks = () => {
     <DragDropContext onDragEnd={onDragEnd}>
       <Container >
         {Object.values(rows).map(row => <TasksColumn row={row} data={row.cards_ids.map((id) => cards[id])} />)}
+        <AddStatusWrp>
+          <AddStatusHeader>
+            <AddStatus>
+              <Text>+Add Status</Text>
+            </AddStatus>
+          </AddStatusHeader>
+        </AddStatusWrp>
       </Container >
     </DragDropContext>
   )

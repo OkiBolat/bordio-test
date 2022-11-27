@@ -3,14 +3,15 @@ import { Droppable } from 'react-beautiful-dnd';
 import { Task } from './Task';
 import styled from 'styled-components';
 
-export const TasksColumn = ({ row, data }) => {
 
-  const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 auto;
-  `
-  const Title = styled.div`
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+flex: 0 0 auto;
+min-width: 300px;
+gap:0;
+`
+const Title = styled.div`
 min-height: 58px;
 
 display: flex;
@@ -49,28 +50,29 @@ font-size: 14px;
 color: #8C939F;
 `;
 
-  const TaskWrp = styled.div`
-  min-height: 100vh;
-  background: #fff;
-  width: 100%;
-  border: 1px solid #F3F3F3;
-  padding: 10px;
-  min-width: 290px;
+const TaskWrp = styled.div`
+min-height: 100vh;
+background: #fff;
+width: 100%;
+border: 1px solid #F3F3F3;
+padding: 10px;
+min-width: 290px;
 }`;
-  const TaskHeader = styled.div` 
-  height: 58px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
+const TaskHeader = styled.div` 
+height: 58px;
+display: flex;
+justify-content: center;
+align-items: center;
 `;
 
+
+export const TasksColumn = ({ row = {id: '', title: '', cards_ids : []}, data }) => {
   return (
     <Container>
       <TaskHeader>
         <Title>
           <TitleText>{row.title}</TitleText>
-          <TitleCount>{row.cards_ids.length}</TitleCount>
+          <TitleCount>{row.cards_ids?.length}</TitleCount>
         </Title>
       </TaskHeader>
       {<Droppable droppableId={row.id}>

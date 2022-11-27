@@ -2,7 +2,11 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 export const ToolsItem = ({ handler, icon, active, children }) => {
-
+  const Text = styled.div`
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+`
   const Container = styled.div`
     display: flex;
     align-items: center;
@@ -43,8 +47,7 @@ export const ToolsItem = ({ handler, icon, active, children }) => {
     <Container onClick={handler}>
       <StyledLogo
         primaryColor={active ? "#0094FF" : "#61DAFB"} secondaryColor="violet" />
-      <div>{children}</div>
+      <Text>{children}</Text>
     </Container>
   );
 }
-

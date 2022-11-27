@@ -22,6 +22,7 @@ flex-grow: 0;
 border: none;
 transition: 0.3s;
 &:hover {
+  background: rgb(0, 118, 204);
 transform: scale(1.02)
 }
 `;
