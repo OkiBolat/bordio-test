@@ -1,8 +1,7 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import styled, { css } from "styled-components";
-export const Task = ({ handler, children, card, index, background = "#fff", info = { text: 'Task', time: '0,2h' }, title }) => {
-  const { time, text } = info;
+export const Task = ({ card, index, background = "#fff",  title }) => {
 
   const TaskContainer = styled.div`
     display: flex;
@@ -11,7 +10,7 @@ export const Task = ({ handler, children, card, index, background = "#fff", info
     align-items: flex-start;
     padding: 15px;
     gap: 10px;
-    background: ${background};
+    background: ${card.color};
     max-height: 84px;
     height: 100%;
     border-radius: 8px;
@@ -34,10 +33,10 @@ export const Task = ({ handler, children, card, index, background = "#fff", info
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}>
-          <Task>{text}</Task>
-          <Task>{time}</Task>
+          <Task>{card.text}</Task>
+          <Task>{card.time}</Task>
         </TaskContainer>
       )}
     </Draggable>
   )
-}
+};

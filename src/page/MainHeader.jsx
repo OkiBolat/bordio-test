@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from './Button';
-import { InputSearchHeader } from './InputSearchHeader';
+import { Button } from '../components/Button';
+import { InputSearchHeader } from '../components/InputSearchHeader';
 import { ReactComponent as BellIcon } from "../assets/icons/bell.svg";
 import image from "../assets/icons/test.png"
-import { DropDownSelect } from './DropDownSelect';
+import { DropDownSelect } from '../components/DropDownSelect';
 
 const Container = styled.div`
   height: 80px;
@@ -13,6 +13,7 @@ const Container = styled.div`
   justify-content: space-between;
   max-width: 75%;
   background: #FFFFFF;
+  min-width: 100%;
   box-shadow: 0px 2px 4px #F0F1F2;
   padding: 20px
 `
@@ -25,6 +26,7 @@ const HeaderRow = styled.div`
 `;
 
 const HeaderNothific = styled.div`
+cursor: pointer;
   display: flex;
   position: relative;
   justify-content:center;

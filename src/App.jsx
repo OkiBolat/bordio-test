@@ -1,10 +1,10 @@
 import './App.css';
-import { SideBar } from './components/SideBar';
-import { ToolsColumn } from './components/ToolsColumn';
-import { MainHeader } from './components/MainHeader';
-import { MainTasks } from './components/MainTasks';
-import { useSelector } from 'react-redux';
 
+import { useSelector } from 'react-redux';
+import { SideBar } from './page/SideBar';
+import { ToolsColumn } from './page/ToolsColumn';
+import { MainHeader } from './page/MainHeader';
+import { MainTasks } from './page/MainTasks';
 
 function App() {
   const rows = useSelector(store => store.canban.rows)

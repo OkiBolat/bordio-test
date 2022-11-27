@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ReactComponent as Logo } from "../assets/icons/bordio-logo.svg";
 import image from "../assets/icons/test.png"
-import { InputSideBar } from './InputSideBar';
+import { InputSideBar } from '../components/InputSideBar';
 import { ReactComponent as Arrow } from "../assets/icons/arrow.svg";
 
 const Container = styled.div`

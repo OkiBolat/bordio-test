@@ -4,15 +4,15 @@ import { ADD_CARD, DELETE_CARD, GET_CARDS, MOVE_CARD } from "./actions";
 
 const initialState = {
   cards: {
-    1: { text: 'Check email', id: 1 },
-    2: { text: 'Add email', id: 2 },
-    3: { text: 'Get email', id: 3 },
-    4: { text: 'Support', id: 4 },
-    5: { text: 'Dragon', id: 5 },
-    6: { text: 'asdasd', id: 6 },
-    7: { text: 'asdasd', id: 7 },
-    8: { text: 'asdasd', id: 8 },
-    9: { text: 'asdasd', id: 9 },
+    1: { text: 'Check email', id: 1, color: "#ABE9CE" , time: "3:0h"},
+    2: { text: 'Add email', id: 2, color: "#FFDFBA", time: "3:0h" },
+    3: { text: 'Get email', id: 3, color: "#FEC6B7", time: "0:5h" },
+    4: { text: 'Support', id: 4, color: "#F2BAE1", time: "3:0h" },
+    5: { text: 'Dragon', id: 5, color: "#ABE9CE" , time: "0:5h"},
+    6: { text: 'Test creat', id: 6, color: "#D8DCFF" , time: "3:0h"},
+    7: { text: 'Great king', id: 7, color: "#ABE9CE" , time: "0:5h"},
+    8: { text: 'On board', id: 8, color: "#FEC6B7", time: "0:5h" },
+    9: { text: 'On change', id: 9, color: "#D8DCFF", time: "3:0h" },
   },
   rows: {
     "0": {

@@ -1,17 +1,24 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DragDropContext } from 'react-beautiful-dnd';
 import styled from 'styled-components';
 import { getCardsThunk, moveCardThunk } from '../redux/canban/actionCreators';
 import { rowsListSelector } from '../redux/canban/selectors';
-import { TasksColumn } from './TasksColumn';
+import { TasksColumn } from '../components/TasksColumn';
 
 const Container = styled.div`
+  min-width: 100%;
   display: flex;
-  justify-content: space-between;
-  // width: 100%;
-  height: 100%;
+  flex-wrap: nowrap;
   overflow-x: scroll;
+  overflow-y: hidden;
+  max-width: 100%;
+  width: 100%;
+  &::last-child {
+    margin-right: 100px;
+  }
+}
 `
 export const MainTasks = () => {
   const dispatch = useDispatch()

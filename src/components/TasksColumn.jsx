@@ -11,6 +11,7 @@ export const TasksColumn = ({ data }) => {
   const Container = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 0 0 auto;
   `
 
   const TaskWrp = styled.div`

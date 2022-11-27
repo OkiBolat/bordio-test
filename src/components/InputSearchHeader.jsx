@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as SearchIcon } from "../assets/icons/search.svg";
+
 const InputCustom = styled.input`
         width: 180px;
         height: 40px;
@@ -17,15 +18,18 @@ const InputCustom = styled.input`
         line-height: 16px;
         color: #8C939F;
     }
-`
+`;
+
 const Container = styled.div`
     position: relative;
-`
+`;
+
 const Glass = styled(SearchIcon)`
       position: absolute;
       right: 20px;
       top: 13px;
-`
+`;
+
 export const InputSearchHeader = ({ handler }) => {
   const [value, setValue] = useState('');
 
