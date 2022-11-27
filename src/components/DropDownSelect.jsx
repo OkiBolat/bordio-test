@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useRef, useState } from "react";
 import styled, { css } from "styled-components";
-import { ReactComponent as Arrow } from "../assets/icons/arrow.svg";
+import { ReactComponent as Arrow } from "../assets/icons/arrow-b.svg";
+
 function useOutsideClick(ref, e) {
   useEffect(() => {
     function handleClickOutside(event) {
@@ -14,7 +15,7 @@ function useOutsideClick(ref, e) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [e, ref])
-}
+};
 
 const DropDownStyled = styled.button`
   position: relative;
@@ -38,9 +39,9 @@ const DropDownStyled = styled.button`
   }
 `;
 const ArrowStyled = styled(Arrow)`
-path: {
-  fill: black
-}
+    ${(props) => props.open && css`
+    transform: rotate(180deg);
+    `}
 `
 const List = styled.div`
     display: flex;
@@ -57,6 +58,7 @@ const List = styled.div`
     top: 40px;
 `
 const ListItem = styled.div`
+    margin-top: 1px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -78,19 +80,18 @@ const ListItem = styled.div`
     `}
 `
 
-const data = [
-  { label: "Board view", id: 1 },
-  { label: "Table view", id: 2 },
-  { label: "Kanban", id: 3 },
-];
-
-export const DropDownSelect = ({ handler, children }) => {
+export const DropDownSelect = ({ data, handler}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(data[0]);
 
   const onCloseSelect = () => {
     setIsOpen(false);
   };
+  const onSelectOption = (option) => {
+    setSelectedValue(option)
+    handler(option)
+  }
+
 
   const wrapperRef = useRef(null);
   useOutsideClick(wrapperRef, onCloseSelect);
@@ -98,10 +99,10 @@ export const DropDownSelect = ({ handler, children }) => {
   return (
     <DropDownStyled ref={wrapperRef} onClick={() => setIsOpen(!isOpen)}>
       {selectedValue.label}
-      <ArrowStyled fill="black" />
+      <ArrowStyled open={isOpen} fill="black" />
       {isOpen &&
         <List>
-          {data.map(s => <ListItem isActive={s.id === selectedValue.id} onClick={() => setSelectedValue(s)} key={s.value}>{s.label}</ListItem>)}
+          {data.map(s => <ListItem isActive={s.id === selectedValue.id} onClick={() => onSelectOption(s)} key={s.value}>{s.label}</ListItem>)}
         </List>}
     </DropDownStyled>
   )

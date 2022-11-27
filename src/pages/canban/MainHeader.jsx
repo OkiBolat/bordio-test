@@ -48,13 +48,18 @@ cursor: pointer;
 const Bell = styled(BellIcon)`
   
 `
+const  dropDownData = [
+  { label: "Board view", id: 1 },
+  { label: "Table view", id: 2 },
+  { label: "Kanban", id: 3 },
+];
 export const MainHeader = () => {
   return (
     <Container>
       <HeaderRow>
         <Button children={'Add new'} type='add' />
-        <DropDownSelect children={"Kanban"} />
-        <DropDownSelect children={"Filter"}/>
+        <DropDownSelect data={dropDownData} children={"Kanban"} />
+        <DropDownSelect data={dropDownData} children={"Filter"}/>
       </HeaderRow>
       <HeaderRow>
         <InputSearchHeader />

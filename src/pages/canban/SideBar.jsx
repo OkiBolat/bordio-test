@@ -16,9 +16,9 @@ const Container = styled.div`
 
 const StyledLogo = styled(Logo)`
     display: flex;
-    margin-top: 20px;
+    margin-top: 24px;
     margin-bottom: 20px;
-    margin-left: 10px;
+    margin-left: 15px;
 
 `;
 
@@ -31,16 +31,16 @@ const SideBarMain = styled.div`
 const WorkSpaceInfo = styled.div`
 display: flex;
 justify-content: flex-start;
-padding-left:15px;
-gap: 10px;
+padding-left:16px;
+gap: 8px;
 align-items: center;
 height: 34px;
-top: 135px;
+font-size: 14px;
 background: #2D4071;
+margin-top: 8px;
 color: #FFFFFF;
 img {
-  width: 28px;
-  height: 28px;
+  width: 22px;
 }`;
 
 const List = styled.div`
@@ -48,7 +48,8 @@ const List = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  padding: 16px;
+  padding: 13px;
+  font-size: 13px;
   align-items: self-start;
   position: relative;
   color: #FFFFFF;
@@ -63,8 +64,9 @@ justify-content: flex-start;
 align-items: self-start;
 font-weight: 400;
 font-size: 14px;
-line-height: 16px;
+line-height: 2px;
 color: #8C939F;
+padding-top: 11px;
 `
 
 export const SideBar = () => {
@@ -95,7 +97,7 @@ export const SideBar = () => {
         </WorkSpaceInfo>
         {sections.map(s =>
           <List onClick={() => onOpenSection(s.id)}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-start"}}>
+            <div style={{ display: "flex", alignItems: "center", gap:"12px", justifyContent: "flex-start"}}>
               <ArrowStyled
                 style={{
                   transform: `rotate(${!s.isOpen ? 180 : 0}deg)`

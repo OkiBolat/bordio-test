@@ -35,7 +35,7 @@ export const InputSearchHeader = ({ handler }) => {
 
   const onChangeInput = (e) => {
     setValue(e.target.value)
-    // handler(e.target.value)
+    handler(e.target.value)
   }
 
   return (

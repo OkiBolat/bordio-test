@@ -18,7 +18,7 @@ export const ToolsItem = ({ handler, icon, active, children }) => {
     border: 5px solid transparent;
     transition: 0.2s;
     padding-left:10px;
-    margin-top: 10px;
+    // margin-top: 10px;
     cursor: pointer;
     &:hover {
       background: #fff;
