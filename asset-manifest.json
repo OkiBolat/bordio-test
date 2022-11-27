@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bordio-test/static/css/main.85fed957.css",
-    "main.js": "/bordio-test/static/js/main.a3e4565a.js",
+    "main.js": "/bordio-test/static/js/main.cedfebc9.js",
     "static/media/bordio-logo.svg": "/bordio-test/static/media/bordio-logo.f1eb3476d268be89ee78c3ce03bbc3cf.svg",
     "static/media/tasksIcon.svg": "/bordio-test/static/media/tasksIcon.1760045b60757a8d163cea107c6dca58.svg",
     "static/media/sheduleIcon.svg": "/bordio-test/static/media/sheduleIcon.c90bfc1adb6d3738f3c5752a0d85147a.svg",
@@ -10,13 +10,14 @@
     "static/media/search.svg": "/bordio-test/static/media/search.7ff89bb5ca5d78db80ffd6520e0ad41f.svg",
     "static/media/filesIcon.svg": "/bordio-test/static/media/filesIcon.a330bc4fbe31bebffbc1f15c778cf5d2.svg",
     "static/media/bell.svg": "/bordio-test/static/media/bell.b055bb4e210ececeb2bf58e353a86e38.svg",
+    "static/media/arrow-b.svg": "/bordio-test/static/media/arrow-b.c11de93a4ca060fe7973e0cabb1ad814.svg",
     "static/media/arrow.svg": "/bordio-test/static/media/arrow.dfc2689ce9d8cdf74ff2626a3de09446.svg",
     "index.html": "/bordio-test/index.html",
     "main.85fed957.css.map": "/bordio-test/static/css/main.85fed957.css.map",
-    "main.a3e4565a.js.map": "/bordio-test/static/js/main.a3e4565a.js.map"
+    "main.cedfebc9.js.map": "/bordio-test/static/js/main.cedfebc9.js.map"
   },
   "entrypoints": [
     "static/css/main.85fed957.css",
-    "static/js/main.a3e4565a.js"
+    "static/js/main.cedfebc9.js"
   ]
 }
