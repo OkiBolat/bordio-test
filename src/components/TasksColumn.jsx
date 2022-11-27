@@ -1,18 +1,53 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Droppable } from 'react-beautiful-dnd';
-import { useSelector } from 'react-redux';
-import styled from 'styled-components';
-import { cardsSelector } from '../redux/canban/selectors';
-import { RowTitile } from './RowTitile';
 import { Task } from './Task';
+import styled from 'styled-components';
 
-export const TasksColumn = ({ data }) => {
+export const TasksColumn = ({ row, data }) => {
 
   const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
   `
+  const Title = styled.div`
+min-height: 58px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 2px 9px;
+gap: 10px;
+`;
+
+const TitleText = styled.div`
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+color: #222222;
+flex: none;
+order: 0;
+flex-grow: 0;
+`;
+
+const TitleCount = styled.div`
+box-sizing: border-box;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 14px 15px;
+width: 26px;
+height: 20px;
+background: #E8EBEF;
+border-radius: 100px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+color: #8C939F;
+`;
 
   const TaskWrp = styled.div`
   min-height: 100vh;
@@ -28,31 +63,25 @@ export const TasksColumn = ({ data }) => {
   justify-content: center;
   align-items: center;
   
-`
-  const cards = useSelector(cardsSelector)
-
-  const rowCards = useMemo(
-    () => data.cards_ids.map((id) => cards[id]),
-    [cards, data]
-  )
+`;
 
   return (
     <Container>
       <TaskHeader>
-        <RowTitile info={{ text: data.title, count: data.cards_ids.length }} />
+        <Title>
+          <TitleText>{row.title}</TitleText>
+          <TitleCount>{row.cards_ids.length}</TitleCount>
+        </Title>
       </TaskHeader>
-
-      {<Droppable droppableId={data.id}>
+      {<Droppable droppableId={row.id}>
         {(provided) => (
           <TaskWrp {...provided.droppableProps} ref={provided.innerRef}>
-            {rowCards.map((card, index) => (
-              <Task title={data.title} key={card.id} card={card} background='#FEC6B7' index={index} />
+            {data.map((card, index) => (
+              <Task title={row.title} key={card.id} card={card} background='#FEC6B7' index={index} />
             ))}{provided.placeholder}
           </TaskWrp>
         )}
       </Droppable>}
     </Container>
-
   )
 };
-

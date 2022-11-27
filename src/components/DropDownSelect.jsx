@@ -25,7 +25,6 @@ const DropDownStyled = styled.button`
   align-items: center;
   padding: 8px 14px 8px 20px;
   gap: 8px;
-  width: 114px;
   height: 40px;
   background: #E1E4E7;
   border-radius: 50px;

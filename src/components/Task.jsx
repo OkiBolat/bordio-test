@@ -1,7 +1,8 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import styled, { css } from "styled-components";
-export const Task = ({ card, index, background = "#fff",  title }) => {
+
+export const Task = ({ card, index,  title }) => {
 
   const TaskContainer = styled.div`
     display: flex;
