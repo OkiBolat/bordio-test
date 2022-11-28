@@ -1,5 +1,5 @@
-import { combineReducers } from "redux";
-import canban from "./canban/reducer"
+import {combineReducers} from "@reduxjs/toolkit";
+import canban from "./canban/reducer";
 
 const rootReducer = combineReducers({
   canban

@@ -26,7 +26,7 @@ const Container = styled.div`
 }
 `;
 
-export const ToolsColumn = () => {
+export const CanbanTools = () => {
   const [items, setItems] = useState([
     { name: 'Roadmap', icon: RoadmapIcon, isActive: true, id: 0 },
     { name: 'Shedule', icon: SheduleIcon, isActive: false, id: 1 },

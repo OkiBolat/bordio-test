@@ -76,8 +76,6 @@ export const MainTasks = () => {
 
   const cards = useSelector(cardsSelector);
 
-  // const rowCards = useMemo(() => ;
-
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <Container >
