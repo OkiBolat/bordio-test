@@ -1,13 +1,11 @@
-import React from "react";
 import styled, { css } from "styled-components";
 
-export const ToolsItem = ({ handler, icon, active, children }) => {
-  const Text = styled.div`
+export const Text = styled.div`
 font-weight: 400;
 font-size: 14px;
 line-height: 16px;
 `
-  const Container = styled.div`
+export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -27,27 +25,9 @@ line-height: 16px;
     &:hover {
       background: #fff;
     }
-    ${() => active && css`
+    ${(props) => props.active && css`
       border-left-color: #0094FF;
       color: #0094FF;
       background: #FFFFFF;
     `}
   `
-  const StyledLogo = styled(icon)`
-  height: 28px;
-  width: 28px;
-  display: inline-block;
-  
-  ${() => active && css`
-  path {
-    fill: #0094FF;
-  }
-`}`;
-  return (
-    <Container onClick={handler}>
-      <StyledLogo
-        primaryColor={active ? "#0094FF" : "#61DAFB"} secondaryColor="violet" />
-      <Text>{children}</Text>
-    </Container>
-  );
-}

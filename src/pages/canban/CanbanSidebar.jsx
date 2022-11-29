@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ReactComponent as Logo } from "../../assets/icons/bordio-logo.svg";
 import image from "../../assets/icons/test.png"
-import { InputSideBar } from '../../components/InputSideBar';
+import { InputSideBar } from '../../components/InputSideBar/InputSideBar';
 import { ReactComponent as Arrow } from "../../assets/icons/arrow.svg";
 
 const Container = styled.div`
@@ -69,7 +69,7 @@ color: #8C939F;
 padding-top: 11px;
 `
 
-export const SideBar = () => {
+export const CanbanSidebar = () => {
   const [sections, setSections] = useState([
     {
       name: "Favorites", isOpen: false, id: 1, data: [

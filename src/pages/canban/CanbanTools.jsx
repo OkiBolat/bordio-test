@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { ToolsItem } from '../../components/ToolsItem';
+import { ToolsItem } from '../../components/ToolsItem/ToolsItem';
 import { ReactComponent as FilesIcon } from "../../assets/icons/filesIcon.svg";
 import { ReactComponent as NotesIcon } from "../../assets/icons/notesIcon.svg";
 import { ReactComponent as SheduleIcon } from "../../assets/icons/sheduleIcon.svg";

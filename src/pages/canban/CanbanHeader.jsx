@@ -1,13 +1,14 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from '../../components/Button';
-import { InputSearchHeader } from '../../components/InputSearchHeader';
+import { Button } from '../../components/Button/Button';
+import { InputSearchHeader } from '../../components/InputSearchHeader/InputSearchHeader';
 import { ReactComponent as BellIcon } from "../../assets/icons/bell.svg";
 import image from "../../assets/icons/test.png"
-import { DropDownSelect } from '../../components/DropDownSelect';
+import { DropDownSelect } from '../../components/DropDownSelect/DropDownSelect';
 
 const Container = styled.div`
+z-index:2;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -55,7 +56,7 @@ const  dropDownData = [
 ];
 
 
-export const MainHeader = () => {
+export const CanbanHeader = () => {
   return (
     <Container>
       <HeaderRow>
@@ -72,7 +73,6 @@ export const MainHeader = () => {
           </div>
         </HeaderNothific>
         <img placeholder='asd' src={image} />
-        
       </HeaderRow>
     </Container>
   )

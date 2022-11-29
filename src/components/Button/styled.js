@@ -1,9 +1,6 @@
-/* eslint-disable jsx-a11y/alt-text */
-import React from "react";
 import styled from "styled-components";
-import plus from "../assets/icons/plus.png";
 
-const CustomButton = styled.button`
+export const CustomButton = styled.button`
 cursor: pointer;
 display: flex;
 flex-direction: row;
@@ -26,13 +23,3 @@ transition: 0.3s;
 transform: scale(1.02)
 }
 `;
-export const Button = ({ handler, children, type = "default" }) => {
-  return (
-    <CustomButton onClick={handler}>
-        <>
-        <img src={plus} />
-        {children}
-        </>
-    </CustomButton>
-  )
-}

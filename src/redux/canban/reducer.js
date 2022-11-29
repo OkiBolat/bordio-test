@@ -2,6 +2,7 @@ import { omit } from "lodash";
 import { combineReducers } from "redux";
 import { ADD_CARD, DELETE_CARD, GET_CARDS, MOVE_CARD } from "./actions";
 
+
 const initialState = {
   cards: {
     1: { text: 'Check email', id: 1, color: "#ABE9CE", time: "3:0h" },
@@ -37,6 +38,8 @@ const initialState = {
     },
   }
 };
+
+
 
 const cards = (state = initialState.cards, action) => {
   switch (action.type) {

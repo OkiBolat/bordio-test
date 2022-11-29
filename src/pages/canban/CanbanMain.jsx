@@ -5,14 +5,14 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import styled from 'styled-components';
 import { getCardsThunk, moveCardThunk } from '../../redux/canban/actionCreators';
 import { cardsSelector, rowsListSelector } from '../../redux/canban/selectors';
-import { TasksColumn } from '../../components/TasksColumn';
+import { TasksColumn } from '../../components/TasksColumn/TasksColumn';
 
 const Container = styled.div`
   min-width: 100%;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: scroll;
-  overflow-y: hidden;
+  // overflow-y: hidden;
   max-width: 100%;
   width: 100%;
   &::last-child {
@@ -22,20 +22,20 @@ const Container = styled.div`
 `
 
 const AddStatusWrp = styled.div`
+position: relative;
 display: flex;
 flex-direction: column;
 flex: 0 0 auto;
 min-width: 400px;
+margin-bottom: -1px;
 gap:0;
 `
 const AddStatus = styled.div`
-cursor: pointer;
 min-height: 58px;
 display: flex;
 justify-content: center;
 align-items: center;
-padding: 2px 25px;
-color: #8C939F;
+padding: 2px 9px;
 gap: 10px;
 &:hover { 
   color: #black;
@@ -54,18 +54,18 @@ flex-grow: 0;
 `;
 
 const AddStatusHeader = styled.div` 
+position: sticky;
+top: 0;
 box-sizing: content-box;
-margin-left: -1px;
 border-bottom: 1px solid #F3F3F3;
 border-left: 1px solid #F3F3F3;
 height: 58px;
 display: flex;
 justify-content: flex-start;
 align-items: center;
-outline: 
 `;
 
-export const MainTasks = () => {
+export const CanbanMain = () => {
   const dispatch = useDispatch();
   const rows = useSelector(rowsListSelector);
 
@@ -80,13 +80,13 @@ export const MainTasks = () => {
     <DragDropContext onDragEnd={onDragEnd}>
       <Container >
         {Object.values(rows).map(row => <TasksColumn row={row} data={row.cards_ids.map((id) => cards[id])} />)}
-        <AddStatusWrp>
+        {/* <AddStatusWrp>
           <AddStatusHeader>
             <AddStatus>
               <Text>+Add Status</Text>
             </AddStatus>
           </AddStatusHeader>
-        </AddStatusWrp>
+        </AddStatusWrp> */}
       </Container >
     </DragDropContext>
   )

@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import styled from "styled-components";
-import { ReactComponent as SearchIcon } from "../assets/icons/search.svg";
+import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg";
 
 const InputCustom = styled.input`
         width: 180px;
